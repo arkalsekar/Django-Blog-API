@@ -19,7 +19,7 @@ Here are the Features of the features of API.
 - ``` /drop/<id> ``` - Deletes a Specific Blog using the id.
 - ``` /search?<query> ``` - Returns the Post have a Specific Query.
 - ``` /insert ``` - Inserts a new Post into the Database.
-
+- ``` /update ``` - Updates an Existing Post from the Database.
 
 ## Setting Up
 
@@ -70,6 +70,8 @@ Now head on to [localhost:8000](http://127.0.0.1:8000/) and access the site.
 ![Demo 5](https://raw.githubusercontent.com/arkalsekar/Django-Blog-API/main/Demo/insert.PNG)
 
 ![Demo 6](https://raw.githubusercontent.com/arkalsekar/Django-Blog-API/main/Demo/insert2.PNG)
+
+![Demo 7](https://raw.githubusercontent.com/arkalsekar/Django-Blog-API/main/Demo/update.PNG)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
