@@ -9,7 +9,8 @@ def home(request):
             "/getAll": "Returns all the Existing Objects from the Database",
             "/get/id": "Returns Specific Object based on the Id", 
             "/drop/id": "Drops/Deletes Specific object from the Database",
-            "/insert/": "Takes a POST request and inserts data into the Database",
+            "/update": "Updates the Existing Post from the Database",
+            "/insert": "Takes a POST request and inserts data into the Database",
             "/search?query=": "Returns Blogs based on the Searh Query"}
     return JsonResponse(data)
 
