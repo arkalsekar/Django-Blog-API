@@ -63,8 +63,23 @@ def search(request):
     blog = Blog.objects.filter(title__icontains=query) or Blog.objects.filter(author__icontains=query) or Blog.objects.filter(content__icontains=query)
     data = {"results" : list(blog.values("id", "author", "title", "content", "tags"))} 
     return JsonResponse(data)
-    
-    
-def error_404(request, *args, **argv):
-    return JsonResponse({"Invalid": "Invalid Url or maybe some Parameters are missing"})
 
+   
+@csrf_exempt
+def update(request):
+
+    if request.method == "POST":
+        id = request.POST['id']
+        title = request.POST['title']
+        author = request.POST['author']
+        content = request.POST['content']
+        if len(title) > 5 and len(author) > 2 and len(content) >3:
+            blog = Blog.objects.filter(id=id)
+            blog.update(title=title, author=author, content=content)
+            print("Udpated Successfully")
+            return JsonResponse({"Success": f"Blog with id {id} has been Updated Successfully"})
+        else:
+            return JsonResponse({"Invalid Length": "Length of all the Fields must be greater than 5"})
+            
+    else:
+        return JsonResponse({"Invalid Request Type": "Request Type POST Expected."})
